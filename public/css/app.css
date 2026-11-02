@@ -1,0 +1,43 @@
+:root {
+  --app-blue: #1d5fd1;
+  --app-blue-dark: #174ea8;
+  --bs-primary: #1d5fd1;
+  --bs-primary-rgb: 29, 95, 209;
+  --bs-link-color: #1d5fd1;
+  --bs-link-hover-color: #174ea8;
+}
+body { background: #f1f3f6; font-size: 1rem; color: #212529; }
+.app-container { max-width: 1140px; }
+.app-navbar { background: var(--app-blue); }
+.panel { background: #fff; border: 1px solid #dfe3e8; border-radius: .5rem; padding: 1.25rem; margin-bottom: 1rem; }
+.auth-panel { max-width: 460px; margin: 2rem auto; padding: 1.75rem; }
+.btn { min-height: 2.5rem; display: inline-flex; align-items: center; justify-content: center; }
+.btn-sm { min-height: 2.25rem; }
+.btn-primary {
+  --bs-btn-bg: var(--app-blue); --bs-btn-border-color: var(--app-blue);
+  --bs-btn-hover-bg: var(--app-blue-dark); --bs-btn-hover-border-color: var(--app-blue-dark);
+  --bs-btn-active-bg: #133f86; --bs-btn-active-border-color: #133f86;
+  --bs-btn-disabled-bg: var(--app-blue); --bs-btn-disabled-border-color: var(--app-blue);
+}
+.btn-outline-primary {
+  --bs-btn-color: var(--app-blue); --bs-btn-border-color: var(--app-blue);
+  --bs-btn-hover-bg: var(--app-blue); --bs-btn-hover-border-color: var(--app-blue);
+  --bs-btn-active-bg: var(--app-blue-dark); --bs-btn-active-border-color: var(--app-blue-dark);
+}
+.form-control:focus, .form-select:focus, .btn:focus-visible {
+  border-color: var(--app-blue);
+  box-shadow: 0 0 0 .25rem rgba(29, 95, 209, .3);
+}
+.stat-box { background: #fff; border: 1px solid #dfe3e8; border-radius: .5rem; padding: .9rem 1rem; height: 100%; }
+.stat-box .stat-number { font-size: 1.75rem; font-weight: 600; line-height: 1.1; }
+.table > thead th { background: #f8f9fb; border-bottom: 2px solid #dfe3e8; white-space: nowrap; }
+.table-hover > tbody > tr:hover > * { --bs-table-hover-bg: #f3f7fe; }
+.task-title { min-width: 14rem; max-width: 26rem; overflow-wrap: anywhere; }
+.status-select { min-width: 8.5rem; width: auto; }
+.pre-line { white-space: pre-line; overflow-wrap: anywhere; }
+.badge-overdue { background: #fff; color: #b02a37; border: 1px solid #b02a37; }
+.table-responsive { border-radius: .5rem; }
+@media (max-width: 575.98px) {
+  .auth-panel { margin: 1rem auto; padding: 1.25rem; }
+  .btn { min-height: 2.75rem; }
+}

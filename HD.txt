@@ -1,0 +1,44 @@
+A. PATH:
+1. 3. Chỉnh PATH:
+
+2. Thêm C:\php83 vào Path (User).
+Trong System variables > Path, xóa dòng C:\xampp\php để php không còn là bản 8.1.
+Đóng hết terminal và VS Code, mở lại, kiểm tra php -v phải ra 8.3.
+Composer: cài từ getcomposer.org (nếu chưa có). Kiểm tra bằng composer -V.
+XAMPP: chỉ dùng để chạy MySQL. Bật Start ở dòng MySQL (không cần Apache).Tải PHP 8.3: vào https://windows.php.net/download, chọn bản Thread Safe x64, tải file Zip và giải nén vào C:\php83.
+
+B. Tạo project Laravel 12
+cd D:\Test_PV_PHP_CUSC
+composer create-project laravel/laravel:^12.0 task-manager
+
+Kiểm tra bằng php artisan --version, phải ra Laravel 12.x. Nếu ra 10.x thì PHP trong terminal đó vẫn là 8.1, hãy xóa project và làm lại bước A3.
+
+C. Chép code của mình
+Giải nén task-manager-overlay-v2.zip.
+Chọn tất cả thư mục và file bên trong, dán vào task-manager, chọn Replace khi Windows hỏi trùng.
+Xóa toàn bộ file trong database/migrations/.
+Xóa database/seeders/DemoSeeder.php nếu còn (bản cũ).
+
+D. Tạo database bằng MySQL Workbench
+Mở Workbench, bấm đúp kết nối TestCUSC (root, 127.0.0.1:3306).
+File > Open SQL Script, chọn database/sql/schema.sql, bấm tia sét. Script này xóa và tạo lại database task_manager.
+Mở tiếp database/sql/seed.sql, bấm tia sét.
+Kiểm tra bằng SELECT username, email, role FROM users;. Phải có 3 dòng: admin (role admin), an và binh (role user).
+
+E. Cấu hình .env
+
+Mỗi biến chỉ xuất hiện một lần trong file. Sửa tại chỗ, không thêm dòng trùng ở cuối
+
+F. Chạy ứng dụng
+cd D:\Test_PV_PHP_CUSC\task-manager
+php artisan config:clear
+php artisan view:clear
+php artisan serve
+
+Mở http://127.0.0.1:8000. Không chạy php artisan migrate.
+
+G. Đăng nhập thử (mật khẩu password123)
+
+admin@example.com	
+an@example.com		
+binh@example.com	
